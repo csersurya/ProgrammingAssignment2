@@ -4,7 +4,6 @@
 ##      b = makeCacheMatrix(a)
 
 ## Converts a matrix to a cachable matrix
-
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -23,7 +22,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This function will return the inverse of the matrix x
 ## it will return the cached result if already calculated earlier
 ## e.g. result = cacheSolve(b), where b = makeCacheMatrix(a) and 'a' is a square matrix
-
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         m <- x$getInverse()
@@ -33,7 +31,6 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- x$get()
-  print(data)
   m <- solve(data)
   x$setInverse(m)
   m
